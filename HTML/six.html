@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial Calculator</title>
+</head>
+<body>
+
+    <h1>Factorial Calculator</h1>
+    <p>Enter a non-negative integer:</p>
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateFactorial() {
+            let number = prompt("Enter a non-negative integer:");
+
+          
+            if (number === null || number === "") {
+                alert("Please enter a number.");
+                return;
+            }
+
+            number = parseInt(number);
+
+            if (isNaN(number) || number < 0) {
+                alert("Please enter a valid non-negative integer.");
+                return;
+            }
+
+            if (number === 0 || number === 1) {
+                document.getElementById("result").innerText = "Factorial of " + number + " is 1.";
+                return;
+            }
+
+            let factorial = 1;
+            for (let i = 2; i <= number; i++) {
+                factorial *= i;
+            }
+
+            document.getElementById("result").innerText = "Factorial of " + number + " is " + factorial + ".";
+        }
+    </script>
+
+</body>
+</html>

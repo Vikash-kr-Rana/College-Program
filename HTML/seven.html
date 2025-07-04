@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Form</title>
+  <script>
+    function validateForm() {
+      let name = document.forms["studentForm"]["name"].value;
+      let roll = document.forms["studentForm"]["roll"].value;
+      if (name == "" || roll == "") {
+        alert("Name and Roll Number are required!");
+        return false;
+      }
+      if (isNaN(roll)) {
+        alert("Roll Number must be numeric!");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h2>Student Record</h2>
+  <form name="studentForm" onsubmit="return validateForm()">
+    Name: <input type="text" name="name"><br><br>
+    Roll No: <input type="text" name="roll"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>

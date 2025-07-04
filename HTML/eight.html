@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Date</title>
+</head>
+<body>
+
+    <h1>Date Display</h1>
+    <button onclick="displayCurrentDate()">Display Date</button>
+    <br><br>
+    <input type="text" id="dateTextbox" size="50" readonly>
+
+    <script>
+        function displayCurrentDate() {
+            const now = new Date();
+            const dateString = now.toLocaleString(); // Formats date and time based on user's locale
+            document.getElementById("dateTextbox").value = dateString;
+        }
+    </script>
+
+</body>
+</html>
